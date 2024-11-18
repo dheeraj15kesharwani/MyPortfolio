@@ -1,0 +1,238 @@
+/* ================  Google fonts ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+/* ======================  VATIABLE CSS ======================== */
+
+:root{
+    --header-hieght: 3rem;
+
+
+    /* ========== COLORS ==========*/
+    /* Color Mode HSL(hue, saturation, lightness)*/
+    --hue: 0;
+    --saturation: 0;
+    --title-color: hsl(var(--hue),var(--saturation), 20%);
+    --title-color-dark: hsl(var var(--hue), var(--saturation), 0%);
+    --text-color: hsl(var(--hue),var(--saturation), 46%);
+    --body-color: hsl(var(--hue),var(--saturation), 98%);
+    --container-color: #fff;
+
+
+    /* ============== FONT AND TYPOGRAPHY ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem  = 8px | 1rem = 16px.....*/
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --samll-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+    --tiny-font-size: 0.625rem;
+
+
+    /* ==========FONT WEIGHT ========*/
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-weight-bold: 600;
+
+    /*============= Margenes Bottom ==========*/
+    --mb-0-25: 0.25rem;
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /* ============ z Index ============*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-index-modal: 1000;
+}
+
+/* RESPONSIVE TYPOGRAPHY  */
+@media screen and (max-width: 992px){
+    :root{
+        --big-font-size: 2.75rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: 0.938rem;
+        --samll-font-size: 0.813rem;
+        --smaller-font-size: 0.75rem;
+    }
+    
+}
+
+
+/*================== BASE ==================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+body{
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+h1, h2, h3{
+    color: var(--title-color);
+    font-weight: var(--font-weight-bold);
+}
+
+ul{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/*========================REUSABLE CSS CLASSES ===================*/
+.section{
+    padding: 6rem 0 2rem;
+}
+.section__title{
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+}
+.section__subtitle{
+    display: block;
+    font-size: var(--samll-font-size);
+    margin-bottom: 4rem;
+}
+.section__title,
+.section__subtitle{
+    text-align: center;
+}
+
+/* ==================== LAYOUT ===================*/
+.container{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;  
+}
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* ===================== BUTTONS =============*/
+
+.button {
+    /* Basic Styles */
+    background: linear-gradient(135deg, #514949, #004); /* Gradient background */
+    border: none;
+    border-radius: 15px;
+    padding: 12px 24px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+}
+
+.button:hover {
+    /* Hover Effect */
+    background: linear-gradient(135deg, #000, #000); /* Reverse gradient */
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Increase shadow */
+}
+
+.button:active {
+    /* Click Effect */
+    transform: translateY(1px); /* Push down slightly */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+}
+
+/*================ BREAKPOINTS ==============*/
+/* For large Devices */
+@media screen and (max-width: 992px) {
+    .container{
+        margin-left: var(--mb-1-5);
+        margin-right: var(--mb-1-5);
+    }
+    .button{
+        font-size: 14px;
+        padding: 1rem 1.75rem;
+
+    }
+    .button__icon{
+        width: 22px;
+        height: 22px;
+    }
+
+}
+/* For medium Devices */
+@media screen and (max-width: 768px) {
+    body{
+        margin: 0 0 var(--header-hieght) 0;
+    }
+    .section{
+        padding: 2rem 0 4rem;
+    }
+
+    .section__subtitle{
+        margin-bottom: var(--mb-3);
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+@media (max-width: 576px) {
+    .button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+}
+/* For Small Devices */
+@media screen and (max-width: 350px) {
+    :root{
+        --big-font-size: 2.25rem;
+    }
+    
+    .button {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    .container{
+        margin-left: var(--mb-1);
+        margin-right: var(--mb-1);
+    }
+}
+
+
+
+
